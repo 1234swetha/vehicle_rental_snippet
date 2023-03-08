@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="vehicle_rental_snippet.req_template">
+        <section class="s_carousel_wrapper" data-vxml="001">
+            <div t-attf-id="myCarousel{{uniq}}" class="s_carousel s_carousel_default carousel slide"
+                 data-bs-interval="10000">
+                <h2 style="text-align:center;margin-top : 40px;">
+                <font class="title">Top Rental Vehicle</font>
+               </h2>
+                <div id="slideshow sample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"
+                     style="margin:70px">
+                <div class="carousel-inner inner">
+                        <t t-foreach="name" t-as="vehicle">
+                                    <div t-attf-class="carousel-item #{vehicle.set_active ? 'active' : ''}">
+                                    <div class="row">
+                                    <t t-foreach="vehicle" t-as="v_name">
+                                        <div class="card col-md-3 card_wrap"
+                                             style="text-align: center;margin-bottom: 40px;">
+                                            <a t-attf-href="/snippet_details?req_id=#{v_name[1]}">
+                                                <img class="card_img" t-attf-src="/web/image/vehicle.rental/{{v_name[1]}}/image"></img>
+                                                <br></br>
+                                                <span class="text_v" t-esc="v_name[0]"></span>
+                                                <br></br>
+                                                <input type="hidden" name="req_id"
+                                                       t-att-value="v_name[1]"></input>
+                                            </a>
+                                        </div>
+                                         </t>
+                                    </div>
+                                    </div>
+                     </t>
+                        </div>
+                    </div>
+                <a class="carousel-control-prev o_not_editable" contenteditable="false"
+                   t-attf-href="#myCarousel{{uniq}}" data-bs-slide="prev" role="img"
+                   aria-label="Previous" title="Previous">
+                    <span class="carousel-control-prev-icon"/>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next o_not_editable" contenteditable="false"
+                   t-attf-href="#myCarousel{{uniq}}" data-bs-slide="next" role="img"
+                   aria-label="Next"
+                   title="Next">
+                    <span class="carousel-control-next-icon"/>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </section>
+    </t>
+    </templates>

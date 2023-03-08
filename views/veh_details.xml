@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="veh_details" name="Vehicle Details">
+            <t t-foreach="vehicle" t-as="i">
+                <div style="margin-top: 100px;text-align:center;">
+                    <h5 t-esc="i.name" style="font-size: 30px;margin-bottom: 20px;margin-top: 20px;text-align:center;"></h5>
+                    <img t-attf-src="/web/image/vehicle.rental/{{i.id}}/image"
+                         style="margin-bottom: 20px; height: 200px;"></img>
+                    <br></br>
+                    Brand :
+                    <span t-esc="i.brand"></span>
+                    <br></br>
+                    Registration Date:
+                    <span t-esc="i.registration_date"></span>
+                    <br></br>
+                    Model Year:
+                    <span t-esc="i.model_year"></span>
+                    <br></br>
+                    <br></br>
+                    <a href="/">Homepage</a>
+                </div>
+            </t>
+    </template>
+</odoo>

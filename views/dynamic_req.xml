@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="dynamic_reqs" name="Dynamic Requests">
+            <section class="container dynamic_snippet_blog">
+                <div class="qweb_req">
+
+                </div>
+            </section>
+        </template>
+    </data>
+</odoo>
